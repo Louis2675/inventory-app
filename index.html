@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Inventory Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <h1>Inventory Manager</h1>
+            <ul class="nav-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="quick-actions">
+        <!-- The add product button will open a modal to add a new product -->
+        <button class="card" id="add-product">
+            <i class="fa-solid fa-plus"></i><br>
+            <span class="text">Add Product</span>
+        </button>
+        <!-- The view inventory button will navigate to the inventory list -->
+        <button class="card" id="view-inventory"><br>
+            <span class="text">View inventory</span>
+        </button>
+    </section>
+    <script src="app.ts"></script>
+</body>
+</html>

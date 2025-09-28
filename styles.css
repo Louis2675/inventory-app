@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button.card {
+    font-size: 30px;
+    background-color: #ffffff;
+    border: 2px solid #bfbfbf;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button.card:hover {
+    box-shadow: 3px 3px 3px #dedede;
+    transform: translateY(-5px);
+}
+
+.fa-plus {
+    font-size: 30px;
+    padding: 5px;
+    margin: 10px;
+    float: left;
+    color: #32b3de;
+    border: 3px solid #32b3de;
+    border-radius: 50%;
+}
