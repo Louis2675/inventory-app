@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Calibri', sans-serif;
 }
 
 button.card {
@@ -15,8 +18,12 @@ button.card {
 }
 
 button.card:hover {
-    box-shadow: 3px 3px 3px #dedede;
-    transform: translateY(-5px);
+    border: 3px solid dodgerblue;
+    color: dodgerblue;
+}
+
+.hidden {
+    display: none;
 }
 
 .fa-plus {
@@ -27,4 +34,16 @@ button.card:hover {
     color: #32b3de;
     border: 3px solid #32b3de;
     border-radius: 50%;
+}
+
+.modals .add-product {
+    width: 50%;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px auto auto;
+}
+
+.modals .add-product .modal-header {
+    display: flex;
+    justify-content: space-between;
 }
