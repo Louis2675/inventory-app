@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport">
     <title>Inventory Manager</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -12,13 +11,15 @@
     <header>
         <!-- Navigation Bar -->
         <nav class="navbar">
-            <h1>Inventory Manager</h1>
-            <ul class="nav-links">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Reports</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="nav-title">Inventory Manager</div>
+                <ul class="nav-links">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Reports</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <section class="quick-actions">
@@ -33,10 +34,13 @@
         </button>
     </section>
     <section class="modals">
-        <div class="add-product">
+        <!-- Add Product Modal -->
+        <div class="add-product hidden">
             <div class="modal-header">
                 <h2>Add New Product</h2>
-                <span class="close-btn">&times;</span>
+                <span class="modal-close">
+                    <span class="close-content">&times;</span>
+                </span>
             </div>
             <form id="product-form">
                 <label for="product-name">Product Name:</label>
@@ -68,6 +72,6 @@
             </form>
         </div>
     </section>
-    <script src="app.ts"></script>
+    <script src="app.js"></script>
 </body>
 </html>

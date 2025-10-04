@@ -1,11 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    /* Global theme */
+    --ink: #000000;
+    --muted: #666666;
+    --panel: rgba(255, 255, 255, .04);
+    --accent: #32b3de;
+    --border: #494949;
+    --border-light: rgba(255, 255, 255, .07);
+    --glass: rgba(255, 255, 255, .06);
+    --glass-hover: rgba(255, 255, 255, .12);
+
+    /* Main variables */
+    --primary-color: #32b3de;
+    --secondary-color: #1e90ff;
+    --accent-color: #ff6347;
+    --text-primary: var(--ink);
+    --text-secondary: var(--muted);
+    --text-light: #ffffff;
+    --bg-primary: #ffffff;
+    --bg-secondary: #e0e0e0;
+    --bg-dark: #c0c0c0;
+    --bg-card: var(--panel);
+    --border-color: var(--border);
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    --gradient-accent: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    --gradient-dark: linear-gradient(45deg, var(--bg-dark), var(--bg-secondary));
+}
 
 * {
+    font-family: 'Calibri', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Calibri', sans-serif;
 }
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    padding-top: 80px; /* To prevent content being hidden under navbar */
+}
+
+html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+/* Navbar Style */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: var(--navbar-blur, blur(20px) saturate(150%));
+    border-bottom: 1px solid rgba(10, 132, 255, 0.2);
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible;
+}
+
+.nav-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 1.1rem;
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-title {
+    display: flex;
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 100px
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+nav a {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    padding: 0.8rem 1.1rem;
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    position: relative;
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    /*white-space: nowrap;*/
+    box-shadow: 0 5px 20px rgba(10, 132, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    animation: activeGlow 2s ease-in-out infinite alternate;
+}
+
+nav a:hover {
+    color: white;
+    background: rgb(102, 171, 255, 0.9);
+    border-color: rgba(10, 132, 255, 0.6);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+            0 10px 30px rgba(10, 132, 255, 0.25),
+            0 0 25px rgba(10, 132, 255, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 0 1px rgba(10, 132, 255, 0.3);
+    text-shadow: 0 0 15px rgba(10, 132, 255, 0.8);
+    backdrop-filter: blur(15px) saturate(150%);
+}
+
+/* Button Styles */
 
 button.card {
     font-size: 30px;
@@ -36,6 +151,8 @@ button.card:hover {
     border-radius: 50%;
 }
 
+/* Modal Styles */
+
 .modals .add-product {
     width: 50%;
     font-size: 20px;
@@ -47,3 +164,26 @@ button.card:hover {
     display: flex;
     justify-content: space-between;
 }
+
+.modals .modal-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.modal-close .close-content {
+    transform: translateY(-1.5px);
+}
+
+
+.modals .modal-close:hover {
+    background-color: #b7b7b7;
+    color: var(--border);
+    cursor: pointer;
+}
+
+
