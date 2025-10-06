@@ -23,7 +23,7 @@
         </nav>
     </header>
     <section class="quick-actions">
-        <!-- The add product button will open a modal to add a new product -->
+        <!-- The add product button will open a window to add a new product -->
         <button class="card" id="add-product">
             <i class="fa-solid fa-plus"></i><br>
             <span class="text">Add Product</span>
@@ -32,45 +32,6 @@
         <button class="card" id="view-inventory"><br>
             <span class="text">View inventory</span>
         </button>
-    </section>
-    <section class="modals">
-        <!-- Add Product Modal -->
-        <div class="add-product hidden">
-            <div class="modal-header">
-                <h2>Add New Product</h2>
-                <span class="modal-close">
-                    <span class="close-content">&times;</span>
-                </span>
-            </div>
-            <form id="product-form">
-                <label for="product-name">Product Name:</label>
-                <br>
-                <input type="text" id="product-name" name="product-name" required>
-
-                <br>
-                <label for="category">Category:</label>
-                <br>
-                <select id="category" name="category" required>
-                    <option value="" disabled selected>Select category</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing</option>
-                    <option value="furniture">Furniture</option>
-                </select>
-
-                <br>
-                <label for="quantity">Quantity:</label>
-                <br>
-                <input type="number" id="quantity" name="quantity" min="1" required>
-
-                <br>
-                <label for="price">Price:</label>
-                <br>
-                <input type="number" id="price" name="price" step="0.01" min="0" required>
-
-                <br>
-                <button type="submit">Add Product</button>
-            </form>
-        </div>
     </section>
     <script src="app.js"></script>
 </body>

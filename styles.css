@@ -38,10 +38,6 @@
 body {
     background: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.6;
-    padding: 20px;
-    min-height: 100vh;
-    padding-top: 80px; /* To prevent content being hidden under navbar */
 }
 
 html {
@@ -153,14 +149,13 @@ button.card:hover {
 
 /* Modal Styles */
 
-.modals .add-product {
-    width: 50%;
+.modals.add-product {
     font-size: 20px;
     padding: 10px 20px;
     margin: 10px auto auto;
 }
 
-.modals .add-product .modal-header {
+.modals.add-product .modal-header {
     display: flex;
     justify-content: space-between;
 }
@@ -179,11 +174,8 @@ button.card:hover {
     transform: translateY(-1.5px);
 }
 
-
 .modals .modal-close:hover {
     background-color: #b7b7b7;
     color: var(--border);
     cursor: pointer;
 }
-
-

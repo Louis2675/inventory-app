@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Product</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="modals add-product">
+        <div class="modal-header">
+            <h2>Add New Product</h2>
+        </div>
+        <form id="product-form">
+            <label for="product-name">Product Name:</label>
+            <br>
+            <input type="text" id="product-name" name="product-name" required>
+
+            <br>
+            <label for="category">Category:</label>
+            <br>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>Select category</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="furniture">Furniture</option>
+            </select>
+
+            <br>
+            <label for="quantity">Quantity:</label>
+            <br>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <br>
+            <label for="price">Price:</label>
+            <br>
+            <input type="number" id="price" name="price" step="0.01" min="0" required>
+
+            <br>
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+</body>
+</html>
