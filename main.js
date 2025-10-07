@@ -1,35 +1,38 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
-const path = require("path");
-
-let mainWindow;
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var electron_1 = require("electron");
+var path = require("path");
+var mainWindow = null;
+var addProductWindow = null;
 function createMainWindow() {
-  mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 700,
-    webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
-  });
-
-  mainWindow.loadFile("index.html");
+    mainWindow = new electron_1.BrowserWindow({
+        width: 1000,
+        height: 700,
+        webPreferences: {
+            preload: path.join(__dirname, "preload.ts"),
+        },
+    });
+    mainWindow.loadFile("index.html");
 }
-
 function openAddProductModal() {
-  const addProductWindow = new BrowserWindow({
-    minWidth: 500,
-    minHeight: 400,
-    resizable: true,
-    webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
-  });
-
-  addProductWindow.loadFile("add-product.html");
+    if (addProductWindow && !addProductWindow.isDestroyed()) {
+        addProductWindow.focus();
+        return;
+    }
+    addProductWindow = new electron_1.BrowserWindow({
+        minWidth: 500,
+        minHeight: 400,
+        resizable: true,
+        webPreferences: {
+            preload: path.join(__dirname, "preload.ts"),
+        },
+    });
+    addProductWindow.loadFile("add-product.html");
+    addProductWindow.on("closed", function () {
+        addProductWindow = null;
+    });
 }
-
-app.whenReady().then(createMainWindow);
-
-ipcMain.handle("openAddProduct", () => {
-  openAddProductModal();
+electron_1.app.whenReady().then(createMainWindow);
+electron_1.ipcMain.handle("openAddProduct", function () {
+    openAddProductModal();
 });
