@@ -1,3 +1,8 @@
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 import { app, BrowserWindow, ipcMain } from "electron";
 import * as path from "path";
 
@@ -9,7 +14,7 @@ function createMainWindow(): void {
     width: 1000,
     height: 700,
     webPreferences: {
-      preload: path.join(__dirname, "preload.ts"),
+      preload: path.join(__dirname, "preload.js"),
     },
   });
 
@@ -27,7 +32,7 @@ function openAddProductModal(): void {
     minHeight: 400,
     resizable: true,
     webPreferences: {
-      preload: path.join(__dirname, "preload.ts"),
+      preload: path.join(__dirname, "preload.js"),
     },
   });
 

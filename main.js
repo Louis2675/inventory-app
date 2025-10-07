@@ -1,5 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var url_1 = require("url");
+var path_1 = require("path");
+var __filename = (0, url_1.fileURLToPath)(import.meta.url);
+var __dirname = (0, path_1.dirname)(__filename);
 var electron_1 = require("electron");
 var path = require("path");
 var mainWindow = null;
@@ -9,7 +13,7 @@ function createMainWindow() {
         width: 1000,
         height: 700,
         webPreferences: {
-            preload: path.join(__dirname, "preload.ts"),
+            preload: path.join(__dirname, "preload.js"),
         },
     });
     mainWindow.loadFile("index.html");
@@ -24,7 +28,7 @@ function openAddProductModal() {
         minHeight: 400,
         resizable: true,
         webPreferences: {
-            preload: path.join(__dirname, "preload.ts"),
+            preload: path.join(__dirname, "preload.js"),
         },
     });
     addProductWindow.loadFile("add-product.html");
