@@ -1,3 +1,7 @@
+import { Category } from "./models/categoryModel";
+import { Product } from "./models/productModel";
+import { Store } from "./models/storeModel";
+
 // Elements getters
 const addProductBtn = document.getElementById("add-product");
 
@@ -7,3 +11,7 @@ if (addProductBtn) {
     window.electronAPI.openAddProduct();
   });
 }
+
+
+// Create a new product
+
